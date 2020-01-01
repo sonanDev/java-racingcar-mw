@@ -11,16 +11,16 @@ import java.util.List;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public class Contest implements Model {
-  private List<ParticipantCar> participants;
+public class ContestModel implements Model {
+  private List<ParticipantCarModel> participants;
   private Integer maxStep;
 
-  public Contest(List<ParticipantCar> participants, Integer maxStep) {
+  public ContestModel(List<ParticipantCarModel> participants, Integer maxStep) {
     this.participants = participants;
     this.maxStep = maxStep;
   }
 
-  public List<ParticipantCar> getParticipants() {
+  public List<ParticipantCarModel> getParticipants() {
     return participants;
   }
 

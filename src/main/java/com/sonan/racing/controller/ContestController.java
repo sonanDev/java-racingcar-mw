@@ -1,8 +1,9 @@
-package com.sonan.racing;
+package com.sonan.racing.controller;
 
 import com.sonan.mvc.Controller;
-import com.sonan.racing.model.Contest;
-import com.sonan.racing.model.ParticipantCar;
+import com.sonan.racing.model.ContestModel;
+import com.sonan.racing.model.ParticipantCarModel;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,19 +15,21 @@ import java.util.List;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public class ContestController implements Controller<Contest> {
+public class ContestController implements Controller<ContestModel> {
 
-  public Contest activate(Contest model) {
-    List<ParticipantCar> cars = model.getParticipants();
+  public ContestModel activate(ContestModel model) {
+    List<ParticipantCarModel> cars = model.getParticipants();
     Integer maxStep = model.getMaxStep();
 
     //redirect ContestStepController
     ContestStepController stepController = new ContestStepController();
     for (int i = 0; i < maxStep; i++) {
-      List<ParticipantCar> nextCars = new Li
-      for (ParticipantCar car: cars) {
-
+      List<ParticipantCarModel> nextCars = new ArrayList();
+      for (ParticipantCarModel car: cars) {
+        nextCars.add(stepController.activate(car));
       }
+      cars = nextCars;
+
     }
 
     stepController.activate()

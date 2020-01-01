@@ -10,11 +10,11 @@ import com.sonan.mvc.Model;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public class ParticipantCar implements Model {
+public class ParticipantCarModel implements Model {
   private String name;
   private Integer distance;
 
-  public ParticipantCar(String name, Integer distance) {
+  public ParticipantCarModel(String name, Integer distance) {
     this.name = name;
     this.distance = distance;
   }

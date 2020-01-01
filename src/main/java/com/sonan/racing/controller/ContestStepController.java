@@ -1,7 +1,7 @@
-package com.sonan.racing;
+package com.sonan.racing.controller;
 
 import com.sonan.mvc.Controller;
-import com.sonan.racing.model.ParticipantCar;
+import com.sonan.racing.model.ParticipantCarModel;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public class ContestStepController implements Controller<ParticipantCar> {
+public class ContestStepController implements Controller<ParticipantCarModel> {
   private static final int DEFAULT_MIN_RANDOM = 0;
   private static final int DEFAULT_MAX_RANDOM = 9;
   private static final int DEFAULT_THRESHOLD_RANDOM = 4;
@@ -30,7 +30,7 @@ public class ContestStepController implements Controller<ParticipantCar> {
     this.thresholdRandom = thresholdRandom;
   }
 
-  public ParticipantCar activate(ParticipantCar model) {
+  public ParticipantCarModel activate(ParticipantCarModel model) {
     if (canMove()) {
       return move(model);
     }
@@ -41,11 +41,11 @@ public class ContestStepController implements Controller<ParticipantCar> {
     return ThreadLocalRandom.current().nextInt(minRandom, maxRandom) >= thresholdRandom;
   }
 
-  private ParticipantCar move(ParticipantCar model) {
-    return new ParticipantCar(model.getName(), model.getDistance() + 1);
+  private ParticipantCarModel move(ParticipantCarModel model) {
+    return new ParticipantCarModel(model.getName(), model.getDistance() + 1);
   }
 
-  private ParticipantCar pause(ParticipantCar model) {
-    return new ParticipantCar(model.getName(), model.getDistance());
+  private ParticipantCarModel pause(ParticipantCarModel model) {
+    return new ParticipantCarModel(model.getName(), model.getDistance());
   }
 }
