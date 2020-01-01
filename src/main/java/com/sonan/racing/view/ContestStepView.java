@@ -10,14 +10,14 @@ import com.sonan.racing.model.ParticipantCarModel;
  * @since: 1.8
  */
 public class ContestStepView implements View<ParticipantCarModel> {
-  private static final String DELEMETER = " : ";
+  private static final String DELIMITER = " : ";
   private static final String VIEW_OF_DISTANCE = "-";
 
   @Override
   public String toString(ParticipantCarModel model) {
     StringBuilder sb = new StringBuilder();
     return sb.append(model.getName())
-        .append(DELEMETER)
+        .append(DELIMITER)
         .append(getDistanceAsString(model))
         .toString();
   }
