@@ -10,11 +10,16 @@ import com.sonan.mvc.Model;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public class ParticipantCarModel implements Model {
+public class ParticipantModel implements Model<ParticipantModel> {
+  private static final Integer DEFAULT_DISTANCE = 0;
   private String name;
   private Integer distance;
 
-  public ParticipantCarModel(String name, Integer distance) {
+  public ParticipantModel(String name) {
+    this(name, DEFAULT_DISTANCE);
+  }
+
+  public ParticipantModel(String name, Integer distance) {
     this.name = name;
     this.distance = distance;
   }
@@ -25,5 +30,15 @@ public class ParticipantCarModel implements Model {
 
   public Integer getDistance() {
     return distance;
+  }
+
+  @Override
+  public ParticipantModel clone() {
+    return new ParticipantModel(name, distance);
+  }
+
+  @Override
+  public String toString() {
+    return getName();
   }
 }

@@ -8,6 +8,6 @@ package com.sonan.mvc;
  * @created: 2020-01-02
  * @since: 1.8
  */
-public interface Model {
-
+public interface Model<T extends Model> {
+  T clone();
 }

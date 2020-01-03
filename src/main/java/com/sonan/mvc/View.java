@@ -11,10 +11,19 @@ package com.sonan.mvc;
 public interface View<T extends Model> {
 
   /**
-   * model을 토대로 View가 원하는 결과 String을 만들어 반환한다.
+   * model을 토대로 View가 원하는 결과물 String을 만들어 반환한다.
    *
    * @param model
    * @return
    */
-  String toString(T model);
+  String generate(T model);
+
+  /**
+   * generate 수행 결과를 System.out.print로 출력한다.
+   *
+   * @param model
+   */
+  default void print(T model) {
+    System.out.print(generate(model));
+  }
 }
