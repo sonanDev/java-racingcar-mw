@@ -6,13 +6,10 @@ import com.sonan.mvc.Model;
 import com.sonan.mvc.View;
 import com.sonan.racing.model.ContestModel;
 import com.sonan.racing.model.ParticipantModel;
-import com.sonan.racing.model.WinnerModel;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -22,7 +19,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  * @created: 2020-01-02
  * @since: 1.8
  */
-class ContestViewTest implements CSVSourceSupport{
+class ContestViewTest implements CSVSourceSupport {
 
   @DisplayName("실행 결과 Step 별로 출력.")
   @ParameterizedTest

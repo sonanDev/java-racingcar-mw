@@ -3,7 +3,6 @@ package com.sonan.racing.controller;
 import com.sonan.mvc.Controller;
 import com.sonan.racing.model.ContestModel;
 import com.sonan.racing.model.ParticipantModel;
-import com.sonan.racing.view.ContestView;
 import java.util.ArrayList;
 import java.util.List;
 

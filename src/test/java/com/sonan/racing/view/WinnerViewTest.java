@@ -7,7 +7,6 @@ import com.sonan.mvc.View;
 import com.sonan.racing.model.ParticipantModel;
 import com.sonan.racing.model.WinnerModel;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
